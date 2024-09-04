@@ -6,5 +6,5 @@ const YOUTUBE_API_KEY =
 
 export const OFF_CHAT_LIMIT = 20;
 const YOUTUBE_SUGGESTION_API =
-  "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+  "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 export { YOUTUBE_API_KEY, YOUTUBE_SUGGESTION_API };
