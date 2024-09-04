@@ -18,10 +18,19 @@ const Head = () => {
   }, [searchQuery]);
 
   const suggestion = async () => {
-    const data = await fetch(YOUTUBE_SUGGESTION_API + searchQuery);
-    const json = await data.json();
-    console.log(json[1]);
-    setSuggestions(json[1]);
+    try {
+      const response = await fetch(YOUTUBE_SUGGESTION_API + searchQuery);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const json = await response.json();
+      console.log(json[1]);
+      setSuggestions(json[1]);
+    } catch (error) {
+      console.error("Failed to fetch suggestions:", error);
+    }
   };
 
   useEffect(() => {}, [searchQuery]);
