@@ -1,5 +1,4 @@
 import React from "react";
-
 const VideoCard = ({ info }) => {
   return (
     <div className="max-w-sm bg-white rounded-xl overflow-hidden cursor-pointer">
